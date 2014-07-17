@@ -84,20 +84,20 @@ namespace noise
         ///
         /// The default rotation angle around the @a z axis, in degrees, is
         /// set to noise::module::DEFAULT_ROTATE_Z.
-        RotatePoint ();
+        NOISE_EXPORT RotatePoint ();
 
-        virtual int GetSourceModuleCount () const
+        NOISE_EXPORT virtual int GetSourceModuleCount () const
         {
           return 1;
         }
 
-        virtual double GetValue (double x, double y, double z) const;
+        NOISE_EXPORT virtual double GetValue (double x, double y, double z) const;
 
         /// Returns the rotation angle around the @a x axis to apply to the
         /// input value.
         ///
         /// @returns The rotation angle around the @a x axis, in degrees.
-        double GetXAngle () const
+        NOISE_EXPORT double GetXAngle () const
         {
           return m_xAngle;
         }
@@ -106,7 +106,7 @@ namespace noise
         /// input value.
         ///
         /// @returns The rotation angle around the @a y axis, in degrees.
-        double GetYAngle () const
+        NOISE_EXPORT double GetYAngle () const
         {
           return m_yAngle;
         }
@@ -115,7 +115,7 @@ namespace noise
         /// input value.
         ///
         /// @returns The rotation angle around the @a z axis, in degrees.
-        double GetZAngle () const
+        NOISE_EXPORT double GetZAngle () const
         {
           return m_zAngle;
         }
@@ -130,7 +130,7 @@ namespace noise
         /// The GetValue() method rotates the coordinates of the input value
         /// around the origin before returning the output value from the
         /// source module.
-        void SetAngles (double xAngle, double yAngle, double zAngle);
+        NOISE_EXPORT void SetAngles (double xAngle, double yAngle, double zAngle);
 
         /// Sets the rotation angle around the @a x axis to apply to the input
         /// value.
@@ -140,7 +140,7 @@ namespace noise
         /// The GetValue() method rotates the coordinates of the input value
         /// around the origin before returning the output value from the
         /// source module.
-        void SetXAngle (double xAngle)
+        NOISE_EXPORT void SetXAngle (double xAngle)
         {
           SetAngles (xAngle, m_yAngle, m_zAngle);
         }
@@ -153,7 +153,7 @@ namespace noise
         /// The GetValue() method rotates the coordinates of the input value
         /// around the origin before returning the output value from the
         /// source module.
-        void SetYAngle (double yAngle)
+        NOISE_EXPORT void SetYAngle (double yAngle)
         {
           SetAngles (m_xAngle, yAngle, m_zAngle);
         }
@@ -166,7 +166,7 @@ namespace noise
         /// The GetValue() method rotates the coordinates of the input value
         /// around the origin before returning the output value from the
         /// source module.
-        void SetZAngle (double zAngle)
+        NOISE_EXPORT void SetZAngle (double zAngle)
         {
           SetAngles (m_xAngle, m_yAngle, zAngle);
         }

@@ -73,7 +73,7 @@ namespace noise
       public:
 
         /// Constructor.
-        Blend ();
+        NOISE_EXPORT Blend ();
 
         /// Returns the control module.
         ///
@@ -90,7 +90,7 @@ namespace noise
         /// value from the source module with an index value of 0.  Positive
         /// values weigh the blend towards the output value from the source
         /// module with an index value of 1.
-        const Module& GetControlModule () const
+        NOISE_EXPORT const Module& GetControlModule () const
         {
           if (m_pSourceModule == NULL || m_pSourceModule[2] == NULL) {
             throw noise::ExceptionNoModule ();
@@ -98,12 +98,12 @@ namespace noise
           return *(m_pSourceModule[2]);
         }
 
-        virtual int GetSourceModuleCount () const
+        NOISE_EXPORT virtual int GetSourceModuleCount () const
         {
           return 3;
         }
 
-	      virtual double GetValue (double x, double y, double z) const;
+	    NOISE_EXPORT virtual double GetValue (double x, double y, double z) const;
 
         /// Sets the control module.
         ///
@@ -123,7 +123,7 @@ namespace noise
         /// This control module must exist throughout the lifetime of this
         /// noise module unless another control module replaces that control
         /// module.
-        void SetControlModule (const Module& controlModule)
+        NOISE_EXPORT void SetControlModule (const Module& controlModule)
         {
           assert (m_pSourceModule != NULL);
           m_pSourceModule[2] = &controlModule;

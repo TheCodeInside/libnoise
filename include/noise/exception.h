@@ -23,6 +23,8 @@
 #ifndef NOISE_EXCEPTION_H
 #define NOISE_EXCEPTION_H
 
+#include "export.h"
+
 namespace noise
 {
 

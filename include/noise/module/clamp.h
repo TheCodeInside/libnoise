@@ -78,7 +78,7 @@ namespace noise
         ///
         /// The default upper bound of the clamping range is set to
         /// noise::module::DEFAULT_CLAMP_UPPER_BOUND.
-        Clamp ();
+        NOISE_EXPORT Clamp ();
 
         /// Returns the lower bound of the clamping range.
         ///
@@ -87,12 +87,12 @@ namespace noise
         /// If the output value from the source module is less than the lower
         /// bound of the clamping range, this noise module clamps that value
         /// to the lower bound.
-        double GetLowerBound () const
+        NOISE_EXPORT double GetLowerBound () const
         {
           return m_lowerBound;
         }
 
-        virtual int GetSourceModuleCount () const
+        NOISE_EXPORT virtual int GetSourceModuleCount () const
         {
           return 1;
         }
@@ -104,12 +104,12 @@ namespace noise
         /// If the output value from the source module is greater than the
         /// upper bound of the clamping range, this noise module clamps that
         /// value to the upper bound.
-        double GetUpperBound () const
+        NOISE_EXPORT double GetUpperBound () const
         {
           return m_upperBound;
         }
 
-        virtual double GetValue (double x, double y, double z) const;
+        NOISE_EXPORT virtual double GetValue (double x, double y, double z) const;
 
         /// Sets the lower and upper bounds of the clamping range.
         ///
@@ -127,7 +127,7 @@ namespace noise
         /// to the lower bound.  If the output value from the source module
         /// is greater than the upper bound of the clamping range, this noise
         /// module clamps that value to the upper bound.
-        void SetBounds (double lowerBound, double upperBound);
+        NOISE_EXPORT void SetBounds (double lowerBound, double upperBound);
 
       protected:
 

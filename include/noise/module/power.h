@@ -56,14 +56,14 @@ namespace noise
       public:
 
         /// Constructor.
-        Power ();
+        NOISE_EXPORT Power ();
 
-        virtual int GetSourceModuleCount () const
+        NOISE_EXPORT virtual int GetSourceModuleCount () const
         {
           return 2;
         }
 
-        virtual double GetValue (double x, double y, double z) const;
+        NOISE_EXPORT virtual double GetValue (double x, double y, double z) const;
 
     };
 

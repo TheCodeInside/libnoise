@@ -57,14 +57,14 @@ namespace noise
       public:
 
         /// Constructor.
-        Checkerboard ();
+        NOISE_EXPORT Checkerboard ();
 
-        virtual int GetSourceModuleCount () const
+        NOISE_EXPORT virtual int GetSourceModuleCount () const
         {
         return 0;
         }
 
-        virtual double GetValue (double x, double y, double z) const;
+        NOISE_EXPORT virtual double GetValue (double x, double y, double z) const;
 
     };
 

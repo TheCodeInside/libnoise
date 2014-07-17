@@ -84,10 +84,10 @@ namespace noise
       public:
 
         /// Constructor.
-        Curve ();
+        NOISE_EXPORT Curve ();
 
         /// Destructor.
-        ~Curve ();
+        NOISE_EXPORT ~Curve ();
 
         /// Adds a control point to the curve.
         ///
@@ -100,12 +100,12 @@ namespace noise
         /// specified; see the preconditions for more information.
         ///
         /// It does not matter which order these points are added.
-        void AddControlPoint (double inputValue, double outputValue);
+        NOISE_EXPORT void AddControlPoint (double inputValue, double outputValue);
 
         /// Deletes all the control points on the curve.
         ///
         /// @post All points on the curve are deleted.
-        void ClearAllControlPoints ();
+        NOISE_EXPORT void ClearAllControlPoints ();
 
         /// Returns a pointer to the array of control points on the curve.
         ///
@@ -117,7 +117,7 @@ namespace noise
         /// It is recommended that an application does not store this pointer
         /// for later use since the pointer to the array may change if the
         /// application calls another method of this object.
-        const ControlPoint* GetControlPointArray () const
+        NOISE_EXPORT const ControlPoint* GetControlPointArray () const
         {
           return m_pControlPoints;
         }
@@ -125,17 +125,17 @@ namespace noise
         /// Returns the number of control points on the curve.
         ///
         /// @returns The number of control points on the curve.
-        int GetControlPointCount () const
+        NOISE_EXPORT int GetControlPointCount () const
         {
           return m_controlPointCount;
         }
 
-        virtual int GetSourceModuleCount () const
+        NOISE_EXPORT virtual int GetSourceModuleCount () const
         {
           return 1;
         }
 
-        virtual double GetValue (double x, double y, double z) const;
+        NOISE_EXPORT virtual double GetValue (double x, double y, double z) const;
 
       protected:
 
@@ -155,7 +155,7 @@ namespace noise
         /// class ensures that the control point array is sorted by input
         /// value.  The code that maps a value onto the curve requires a
         /// sorted control point array.
-        int FindInsertionPos (double inputValue);
+        NOISE_EXPORT int FindInsertionPos (double inputValue);
 
         /// Inserts the control point at the specified position in the
         /// internal control point array.
@@ -173,7 +173,7 @@ namespace noise
         /// requires that all control points in the array must be sorted by
         /// input value, the new control point should be inserted at the
         /// position in which the order is still preserved.
-        void InsertAtPos (int insertionPos, double inputValue,
+        NOISE_EXPORT void InsertAtPos (int insertionPos, double inputValue,
           double outputValue);
 
         /// Number of control points on the curve.

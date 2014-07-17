@@ -56,13 +56,13 @@ namespace noise
       public:
 
         /// Constructor.
-        Line ();
+        NOISE_EXPORT Line ();
 
         /// Constructor
         ///
         /// @param module The noise module that is used to generate the output
         /// values.
-        Line (const module::Module& module);
+        NOISE_EXPORT Line (const module::Module& module);
 
         /// Returns a flag indicating whether the output value is to be
         /// attenuated (moved toward 0.0) as the ends of the line segment are
@@ -71,7 +71,7 @@ namespace noise
         /// @returns
         /// - @a true if the value is to be attenuated
         /// - @a false if not.
-        bool GetAttenuate () const
+        NOISE_EXPORT bool GetAttenuate () const
         {
           return m_attenuate;
         }
@@ -82,7 +82,7 @@ namespace noise
         /// @returns A reference to the noise module.
         ///
         /// @pre A noise module was passed to the SetModule() method.
-        const module::Module& GetModule () const
+        NOISE_EXPORT const module::Module& GetModule () const
         {
           assert (m_pModule != NULL);
           return *m_pModule;
@@ -108,14 +108,14 @@ namespace noise
         /// If the value is not to be attenuated, @a p can safely range
         /// outside the 0.0 to 1.0 range; the output value will be
         /// extrapolated along the line that this segment is part of.
-        double GetValue (double p) const;
+        NOISE_EXPORT double GetValue (double p) const;
 
         /// Sets a flag indicating that the output value is to be attenuated
         /// (moved toward 0.0) as the ends of the line segment are approached.
         ///
         /// @param att A flag that specifies whether the output value is to be
         /// attenuated.
-        void SetAttenuate (bool att)
+        NOISE_EXPORT void SetAttenuate (bool att)
         {
           m_attenuate = att;
         }
@@ -126,7 +126,7 @@ namespace noise
         /// @param x x coordinate of the end position.
         /// @param y y coordinate of the end position.
         /// @param z z coordinate of the end position.
-        void SetEndPoint (double x, double y, double z)
+        NOISE_EXPORT void SetEndPoint (double x, double y, double z)
         {
           m_x1 = x;
           m_y1 = y;
@@ -140,7 +140,7 @@ namespace noise
         ///
         /// This noise module must exist for the lifetime of this object,
         /// until you pass a new noise module to this method.
-        void SetModule (const module::Module& module)
+        NOISE_EXPORT void SetModule (const module::Module& module)
         {
           m_pModule = &module;
         }
@@ -151,7 +151,7 @@ namespace noise
         /// @param x x coordinate of the start position.
         /// @param y y coordinate of the start position.
         /// @param z z coordinate of the start position.
-        void SetStartPoint (double x, double y, double z)
+        NOISE_EXPORT void SetStartPoint (double x, double y, double z)
         {
           m_x0 = x;
           m_y0 = y;

@@ -29,6 +29,7 @@
 #include "../basictypes.h"
 #include "../exception.h"
 #include "../noisegen.h"
+#include "../export.h"
 
 namespace noise
 {
@@ -226,10 +227,10 @@ namespace noise
       public:
 
         /// Constructor.
-        Module (int sourceModuleCount);
+        NOISE_EXPORT Module (int sourceModuleCount);
 
         /// Destructor.
-        virtual ~Module ();
+        NOISE_EXPORT virtual ~Module ();
 
         /// Returns a reference to a source module connected to this noise
         /// module.
@@ -249,7 +250,7 @@ namespace noise
         /// Each noise module requires the attachment of a certain number of
         /// source modules before an application can call the GetValue()
         /// method.
-        virtual const Module& GetSourceModule (int index) const
+        NOISE_EXPORT virtual const Module& GetSourceModule (int index) const
         {
           assert (m_pSourceModule != NULL);
 
@@ -272,7 +273,7 @@ namespace noise
         ///
         /// @returns The number of source modules required by this noise
         /// module.
-        virtual int GetSourceModuleCount () const = 0;
+        NOISE_EXPORT virtual int GetSourceModuleCount () const = 0;
 
         /// Generates an output value given the coordinates of the specified
         /// input value.
@@ -293,7 +294,7 @@ namespace noise
         ///
         /// To determine the number of source modules required by this noise
         /// module, call the GetSourceModuleCount() method.
-        virtual double GetValue (double x, double y, double z) const = 0;
+        NOISE_EXPORT virtual double GetValue (double x, double y, double z) const = 0;
 
         /// Connects a source module to this noise module.
         ///
@@ -325,7 +326,7 @@ namespace noise
         ///
         /// A noise module does not modify a source module; it only modifies
         /// its output values.
-        virtual void SetSourceModule (int index, const Module& sourceModule)
+        NOISE_EXPORT virtual void SetSourceModule (int index, const Module& sourceModule)
         {
           assert (m_pSourceModule != NULL);
           if (index >= GetSourceModuleCount () || index < 0) {
@@ -348,7 +349,7 @@ namespace noise
         /// This restriction is necessary because if this object was copied,
         /// all source modules assigned to this noise module would need to be
         /// copied as well.
-        const Module& operator= (const Module& m)
+        NOISE_EXPORT const Module& operator= (const Module& m)
         {
           return *this;
         }

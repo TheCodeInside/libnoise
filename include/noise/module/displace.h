@@ -72,14 +72,14 @@ namespace noise
       public:
 
       /// Constructor.
-      Displace ();
+      NOISE_EXPORT Displace ();
 
-      virtual int GetSourceModuleCount () const
+      NOISE_EXPORT virtual int GetSourceModuleCount () const
       {
         return 4;
       }
 
-      virtual double GetValue (double x, double y, double z) const;
+      NOISE_EXPORT virtual double GetValue (double x, double y, double z) const;
 
       /// Returns the @a x displacement module.
       ///
@@ -95,7 +95,7 @@ namespace noise
       /// value from this displacement module to the @a x coordinate of the
       /// input value before returning the output value from the source
       /// module.
-      const Module& GetXDisplaceModule () const
+      NOISE_EXPORT const Module& GetXDisplaceModule () const
       {
         if (m_pSourceModule == NULL || m_pSourceModule[1] == NULL) {
           throw noise::ExceptionNoModule ();
@@ -117,7 +117,7 @@ namespace noise
       /// value from this displacement module to the @a y coordinate of the
       /// input value before returning the output value from the source
       /// module.
-      const Module& GetYDisplaceModule () const
+      NOISE_EXPORT const Module& GetYDisplaceModule () const
       {
         if (m_pSourceModule == NULL || m_pSourceModule[2] == NULL) {
           throw noise::ExceptionNoModule ();
@@ -139,7 +139,7 @@ namespace noise
       /// value from this displacement module to the @a z coordinate of the
       /// input value before returning the output value from the source
       /// module.
-      const Module& GetZDisplaceModule () const
+      NOISE_EXPORT const Module& GetZDisplaceModule () const
       {
         if (m_pSourceModule == NULL || m_pSourceModule[3] == NULL) {
           throw noise::ExceptionNoModule ();
@@ -167,7 +167,7 @@ namespace noise
       ///
       /// These displacement modules must exist throughout the lifetime of
       /// this noise module unless another displacement module replaces it.
-      void SetDisplaceModules (const Module& xDisplaceModule,
+      NOISE_EXPORT void SetDisplaceModules (const Module& xDisplaceModule,
         const Module& yDisplaceModule, const Module& zDisplaceModule)
       {
         SetXDisplaceModule (xDisplaceModule);
@@ -192,7 +192,7 @@ namespace noise
       ///
       /// This displacement module must exist throughout the lifetime of this
       /// noise module unless another displacement module replaces it.
-      void SetXDisplaceModule (const Module& xDisplaceModule)
+      NOISE_EXPORT void SetXDisplaceModule (const Module& xDisplaceModule)
       {
         assert (m_pSourceModule != NULL);
         m_pSourceModule[1] = &xDisplaceModule;
@@ -215,7 +215,7 @@ namespace noise
       ///
       /// This displacement module must exist throughout the lifetime of this
       /// noise module unless another displacement module replaces it.
-      void SetYDisplaceModule (const Module& yDisplaceModule)
+      NOISE_EXPORT void SetYDisplaceModule (const Module& yDisplaceModule)
       {
         assert (m_pSourceModule != NULL);
         m_pSourceModule[2] = &yDisplaceModule;
@@ -238,7 +238,7 @@ namespace noise
       ///
       /// This displacement module must exist throughout the lifetime of this
       /// noise module unless another displacement module replaces it.
-      void SetZDisplaceModule (const Module& zDisplaceModule)
+      NOISE_EXPORT void SetZDisplaceModule (const Module& zDisplaceModule)
       {
         assert (m_pSourceModule != NULL);
         m_pSourceModule[3] = &zDisplaceModule;

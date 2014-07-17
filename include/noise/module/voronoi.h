@@ -1,3 +1,4 @@
+
 // voronoi.h
 //
 // Copyright (C) 2003, 2004 Jason Bevins
@@ -102,7 +103,7 @@ namespace noise
         ///
         /// The default seed value is set to
         /// noise::module::DEFAULT_VORONOI_SEED.
-        Voronoi ();
+        NOISE_EXPORT Voronoi ();
 
         /// Enables or disables applying the distance from the nearest seed
         /// point to the output value.
@@ -116,7 +117,7 @@ namespace noise
         /// Setting this value to @a true (and setting the displacement to a
         /// near-zero value) causes this noise module to generate cracked mud
         /// formations.
-        void EnableDistance (bool enable = true)
+        NOISE_EXPORT void EnableDistance (bool enable = true)
         {
           m_enableDistance = enable;
         }
@@ -129,7 +130,7 @@ namespace noise
         /// value from a coherent-noise function.  The <i>displacement
         /// value</i> controls the range of random values to assign to each
         /// cell.  The range of random values is +/- the displacement value.
-        double GetDisplacement () const
+        NOISE_EXPORT double GetDisplacement () const
         {
           return m_displacement;
         }
@@ -140,12 +141,12 @@ namespace noise
         ///
         /// The frequency determines the size of the Voronoi cells and the
         /// distance between these cells.
-        double GetFrequency () const
+        NOISE_EXPORT double GetFrequency () const
         {
           return m_frequency;
         }
 
-        virtual int GetSourceModuleCount () const
+        NOISE_EXPORT virtual int GetSourceModuleCount () const
         {
           return 0;
         }
@@ -157,7 +158,7 @@ namespace noise
         /// The positions of the seed values are calculated by a
         /// coherent-noise function.  By modifying the seed value, the output
         /// of that function changes.
-        int GetSeed () const
+        NOISE_EXPORT int GetSeed () const
         {
           return m_seed;
         }
@@ -172,12 +173,12 @@ namespace noise
         /// Applying the distance from the nearest seed point to the output
         /// value causes the points in the Voronoi cells to increase in value
         /// the further away that point is from the nearest seed point.
-        bool IsDistanceEnabled () const
+        NOISE_EXPORT bool IsDistanceEnabled () const
         {
           return m_enableDistance;
         }
 
-        virtual double GetValue (double x, double y, double z) const;
+        NOISE_EXPORT virtual double GetValue (double x, double y, double z) const;
 
         /// Sets the displacement value of the Voronoi cells.
         ///
@@ -187,7 +188,7 @@ namespace noise
         /// value from a coherent-noise function.  The <i>displacement
         /// value</i> controls the range of random values to assign to each
         /// cell.  The range of random values is +/- the displacement value.
-        void SetDisplacement (double displacement)
+        NOISE_EXPORT void SetDisplacement (double displacement)
         {
           m_displacement = displacement;
         }
@@ -198,7 +199,7 @@ namespace noise
         ///
         /// The frequency determines the size of the Voronoi cells and the
         /// distance between these cells.
-        void SetFrequency (double frequency)
+        NOISE_EXPORT void SetFrequency (double frequency)
         {
           m_frequency = frequency;
         }
@@ -210,7 +211,7 @@ namespace noise
         /// The positions of the seed values are calculated by a
         /// coherent-noise function.  By modifying the seed value, the output
         /// of that function changes.
-        void SetSeed (int seed)
+        NOISE_EXPORT void SetSeed (int seed)
         {
           m_seed = seed;
         }

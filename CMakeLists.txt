@@ -2,7 +2,7 @@ cmake_minimum_required( VERSION 2.8 )
 project( libnoise )
 
 set( CMAKE_BUILD_TYPE Release CACHE STRING "Build Type." FORCE )
-set( LIBNOISE_BUILD_SHARED_LIBS FALSE CACHE BOOL "Build shared libraries." )
+set( LIBNOISE_BUILD_SHARED_LIBS TRUE CACHE BOOL "Build shared libraries." )
 set( LIBNOISE_BUILD_DOC FALSE CACHE BOOL "Build Doxygen documentation." )
 
 set( LIBNOISE_INCLUDE_DIR_NAME "noise" CACHE STRING "Define the name of the include directory for libnoise." )
@@ -10,8 +10,10 @@ set( LIBNOISE_SKIP_INSTALL FALSE CACHE BOOL "Don't install libnoise." )
 mark_as_advanced( LIBNOISE_INCLUDE_DIR_NAME )
 mark_as_advanced( LIBNOISE_SKIP_INSTALL )
 
+add_definitions( -DNOISE_BUILD )
 if( LIBNOISE_BUILD_SHARED_LIBS )
 	set( LIB_TYPE SHARED )
+	add_definitions( -DNOISE_SHARED_LIB )
 else()
 	set( LIB_TYPE STATIC )
 endif()
@@ -21,6 +23,7 @@ set( INC_DIR "include" )
 
 set(
 	SOURCES
+	${INC_DIR}/noise/export.h
 	${INC_DIR}/noise/basictypes.h
 	${INC_DIR}/noise/exception.h
 	${INC_DIR}/noise/interp.h

@@ -78,7 +78,7 @@ namespace noise
         ///
         /// The default frequency is set to
         /// noise::module::DEFAULT_CYLINDERS_FREQUENCY.
-        Cylinders ();
+        NOISE_EXPORT Cylinders ();
 
         /// Returns the frequency of the concentric cylinders.
         ///
@@ -86,17 +86,17 @@ namespace noise
         ///
         /// Increasing the frequency increases the density of the concentric
         /// cylinders, reducing the distances between them.
-        double GetFrequency () const
+        NOISE_EXPORT double GetFrequency () const
         {
           return m_frequency;
         }
 
-        virtual int GetSourceModuleCount () const
+        NOISE_EXPORT virtual int GetSourceModuleCount () const
         {
           return 0;
         }
 
-        virtual double GetValue (double x, double y, double z) const;
+        NOISE_EXPORT virtual double GetValue (double x, double y, double z) const;
 
         /// Sets the frequenct of the concentric cylinders.
         ///
@@ -104,7 +104,7 @@ namespace noise
         ///
         /// Increasing the frequency increases the density of the concentric
         /// cylinders, reducing the distances between them.
-        void SetFrequency (double frequency)
+        NOISE_EXPORT void SetFrequency (double frequency)
         {
           m_frequency = frequency;
         }

@@ -76,10 +76,10 @@ namespace noise
 	    public:
 
 	      /// Constructor.
-	      Terrace ();
+	      NOISE_EXPORT Terrace ();
 
 	      /// Destructor.
-	      ~Terrace ();
+	      NOISE_EXPORT ~Terrace ();
 
 	      /// Adds a control point to the terrace-forming curve.
 	      ///
@@ -95,12 +95,12 @@ namespace noise
         /// increases.  At the control points, its slope resets to zero.
 	      ///
 	      /// It does not matter which order these points are added.
-	      void AddControlPoint (double value);
+	      NOISE_EXPORT void AddControlPoint (double value);
 
 	      /// Deletes all the control points on the terrace-forming curve.
 	      ///
 	      /// @post All control points on the terrace-forming curve are deleted.
-	      void ClearAllControlPoints ();
+	      NOISE_EXPORT void ClearAllControlPoints ();
 
 	      /// Returns a pointer to the array of control points on the
 	      /// terrace-forming curve.
@@ -118,7 +118,7 @@ namespace noise
 	      /// It is recommended that an application does not store this pointer
         /// for later use since the pointer to the array may change if the
         /// application calls another method of this object.
-	      const double* GetControlPointArray () const
+	      NOISE_EXPORT const double* GetControlPointArray () const
 	      {
 	        return m_pControlPoints;
 	      }
@@ -127,12 +127,12 @@ namespace noise
 	      ///
 	      /// @returns The number of control points on the terrace-forming
         /// curve.
-	      int GetControlPointCount () const
+	      NOISE_EXPORT int GetControlPointCount () const
 	      {
 	        return m_controlPointCount;
 	      }
 
-    	  virtual int GetSourceModuleCount () const
+    	  NOISE_EXPORT virtual int GetSourceModuleCount () const
 	      {
 	        return 1;
 	      }
@@ -142,7 +142,7 @@ namespace noise
         ///
 	      /// @param invert Specifies whether to invert the curve between the
         /// control points.
-	      void InvertTerraces (bool invert = true)
+	      NOISE_EXPORT void InvertTerraces (bool invert = true)
 	      {
 	        m_invertTerraces = invert;
 	      }
@@ -154,12 +154,12 @@ namespace noise
         /// - @a true if the curve between the control points is inverted.
         /// - @a false if the curve between the control points is not
         ///   inverted.
-        bool IsTerracesInverted () const
+        NOISE_EXPORT bool IsTerracesInverted () const
         {
 	        return m_invertTerraces;
         }
 
-    	  virtual double GetValue (double x, double y, double z) const;
+    	  NOISE_EXPORT virtual double GetValue (double x, double y, double z) const;
 
 	      /// Creates a number of equally-spaced control points that range from
         /// -1 to +1.
@@ -178,7 +178,7 @@ namespace noise
 	      /// Two or more control points define the terrace-forming curve.  The
         /// start of this curve has a slope of zero; its slope then smoothly
         /// increases.  At the control points, its slope resets to zero.
-        void MakeControlPoints (int controlPointCount);
+        NOISE_EXPORT void MakeControlPoints (int controlPointCount);
 
     	protected:
 
@@ -198,7 +198,7 @@ namespace noise
         /// class ensures that the control point array is sorted by value.
         /// The code that maps a value onto the curve requires a sorted
         /// control point array.
-	      int FindInsertionPos (double value);
+	      NOISE_EXPORT int FindInsertionPos (double value);
 
 	      /// Inserts the control point at the specified position in the
 	      /// internal control point array.
@@ -215,7 +215,7 @@ namespace noise
         /// that all control points in the array be sorted by value, the new
         /// control point should be inserted at the position in which the
         /// order is still preserved.
-	      void InsertAtPos (int insertionPos, double value);
+	      NOISE_EXPORT void InsertAtPos (int insertionPos, double value);
 
 	      /// Number of control points stored in this noise module.
 	      int m_controlPointCount;

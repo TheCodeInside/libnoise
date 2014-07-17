@@ -96,7 +96,7 @@ namespace noise
         ///
         /// The default upper bound of the selection range is set to
         /// noise::module::DEFAULT_SELECT_UPPER_BOUND.
-        Select ();
+        NOISE_EXPORT Select ();
 
         /// Returns the control module.
         ///
@@ -114,7 +114,7 @@ namespace noise
         /// the value from the source module with an index value of 1.
         /// Otherwise, this method outputs the value from the source module
         /// with an index value of 0.
-        const Module& GetControlModule () const
+        NOISE_EXPORT const Module& GetControlModule () const
         {
           if (m_pSourceModule == NULL || m_pSourceModule[2] == NULL) {
             throw noise::ExceptionNoModule ();
@@ -132,7 +132,7 @@ namespace noise
         /// By default, there is an abrupt transition between the output
         /// values from the two source modules at the selection-range
         /// boundary.
-        double GetEdgeFalloff () const
+        NOISE_EXPORT double GetEdgeFalloff () const
         {
           return m_edgeFalloff;
         }
@@ -145,12 +145,12 @@ namespace noise
         /// selection range, the GetValue() method outputs the value from the
         /// source module with an index value of 1.  Otherwise, this method
         /// outputs the value from the source module with an index value of 0.
-        double GetLowerBound () const
+        NOISE_EXPORT double GetLowerBound () const
         {
           return m_lowerBound;
         }
 
-        virtual int GetSourceModuleCount () const
+        NOISE_EXPORT virtual int GetSourceModuleCount () const
         {
           return 3;
         }
@@ -163,12 +163,12 @@ namespace noise
         /// selection range, the GetValue() method outputs the value from the
         /// source module with an index value of 1.  Otherwise, this method
         /// outputs the value from the source module with an index value of 0.
-        double GetUpperBound () const
+        NOISE_EXPORT double GetUpperBound () const
         {
           return m_upperBound;
         }
 
-        virtual double GetValue (double x, double y, double z) const;
+        NOISE_EXPORT virtual double GetValue (double x, double y, double z) const;
 
         /// Sets the lower and upper bounds of the selection range.
         ///
@@ -185,7 +185,7 @@ namespace noise
         /// selection range, the GetValue() method outputs the value from the
         /// source module with an index value of 1.  Otherwise, this method
         /// outputs the value from the source module with an index value of 0.
-        void SetBounds (double lowerBound, double upperBound);
+        NOISE_EXPORT void SetBounds (double lowerBound, double upperBound);
 
         /// Sets the control module.
         ///
@@ -206,7 +206,7 @@ namespace noise
         /// This control module must exist throughout the lifetime of this
         /// noise module unless another control module replaces that control
         /// module.
-        void SetControlModule (const Module& controlModule)
+        NOISE_EXPORT void SetControlModule (const Module& controlModule)
         {
           assert (m_pSourceModule != NULL);
           m_pSourceModule[2] = &controlModule;
@@ -239,7 +239,7 @@ namespace noise
         /// - the output value from the source module with an index value of 0
         ///   if the output value from the control module is greater than 0.9
         ///   ( = 0.8 + 0.1).
-        void SetEdgeFalloff (double edgeFalloff);
+        NOISE_EXPORT void SetEdgeFalloff (double edgeFalloff);
 
       protected:
 

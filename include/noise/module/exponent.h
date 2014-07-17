@@ -62,7 +62,7 @@ namespace noise
         /// Constructor.
         ///
         /// The default exponent is set to noise::module::DEFAULT_EXPONENT.
-        Exponent ();
+        NOISE_EXPORT Exponent ();
 
         /// Returns the exponent value to apply to the output value from the
         /// source module.
@@ -73,17 +73,17 @@ namespace noise
         /// to +1.0, this noise module first normalizes this output value (the
         /// range becomes 0.0 to 1.0), maps that value onto an exponential
         /// curve, then rescales that value back to the original range.
-        double GetExponent () const
+        NOISE_EXPORT double GetExponent () const
         {
           return m_exponent;
         }
 
-        virtual int GetSourceModuleCount () const
+        NOISE_EXPORT virtual int GetSourceModuleCount () const
         {
           return 1;
         }
 
-        virtual double GetValue (double x, double y, double z) const;
+        NOISE_EXPORT virtual double GetValue (double x, double y, double z) const;
 
         /// Sets the exponent value to apply to the output value from the
         /// source module.
@@ -94,7 +94,7 @@ namespace noise
         /// to +1.0, this noise module first normalizes this output value (the
         /// range becomes 0.0 to 1.0), maps that value onto an exponential
         /// curve, then rescales that value back to the original range.
-        void SetExponent (double exponent)
+        NOISE_EXPORT void SetExponent (double exponent)
         {
           m_exponent = exponent;
         }

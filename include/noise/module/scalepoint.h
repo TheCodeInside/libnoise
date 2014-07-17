@@ -80,20 +80,20 @@ namespace noise
         ///
         /// The default scaling factor applied to the @a z coordinate is set
         /// to noise::module::DEFAULT_SCALE_POINT_Z.
-        ScalePoint ();
+        NOISE_EXPORT ScalePoint ();
 
-        virtual int GetSourceModuleCount () const
+        NOISE_EXPORT virtual int GetSourceModuleCount () const
         {
           return 1;
         }
 
-        virtual double GetValue (double x, double y, double z) const;
+        NOISE_EXPORT virtual double GetValue (double x, double y, double z) const;
 
         /// Returns the scaling factor applied to the @a x coordinate of the
         /// input value.
         ///
         /// @returns The scaling factor applied to the @a x coordinate.
-        double GetXScale () const
+        NOISE_EXPORT double GetXScale () const
         {
           return m_xScale;
         }
@@ -102,7 +102,7 @@ namespace noise
         /// input value.
         ///
         /// @returns The scaling factor applied to the @a y coordinate.
-        double GetYScale () const
+        NOISE_EXPORT double GetYScale () const
         {
           return m_yScale;
         }
@@ -111,7 +111,7 @@ namespace noise
         /// input value.
         ///
         /// @returns The scaling factor applied to the @a z coordinate.
-        double GetZScale () const
+        NOISE_EXPORT double GetZScale () const
         {
           return m_zScale;
         }
@@ -123,7 +123,7 @@ namespace noise
         /// The GetValue() method multiplies the ( @a x, @a y, @a z )
         /// coordinates of the input value with a scaling factor before
         /// returning the output value from the source module.
-        void SetScale (double scale)
+        NOISE_EXPORT void SetScale (double scale)
         {
           m_xScale = scale;
           m_yScale = scale;
@@ -140,7 +140,7 @@ namespace noise
         /// The GetValue() method multiplies the ( @a x, @a y, @a z )
         /// coordinates of the input value with a scaling factor before
         /// returning the output value from the source module.
-        void SetScale (double xScale, double yScale, double zScale)
+        NOISE_EXPORT void SetScale (double xScale, double yScale, double zScale)
         {
           m_xScale = xScale;
           m_yScale = yScale;
@@ -155,7 +155,7 @@ namespace noise
         /// The GetValue() method multiplies the ( @a x, @a y, @a z )
         /// coordinates of the input value with a scaling factor before
         /// returning the output value from the source module.
-        void SetXScale (double xScale)
+        NOISE_EXPORT void SetXScale (double xScale)
         {
           m_xScale = xScale;
         }
@@ -168,7 +168,7 @@ namespace noise
         /// The GetValue() method multiplies the ( @a x, @a y, @a z )
         /// coordinates of the input value with a scaling factor before
         /// returning the output value from the source module.
-        void SetYScale (double yScale)
+        NOISE_EXPORT void SetYScale (double yScale)
         {
           m_yScale = yScale;
         }
@@ -181,7 +181,7 @@ namespace noise
         /// The GetValue() method multiplies the ( @a x, @a y, @a z )
         /// coordinates of the input value with a scaling factor before
         /// returning the output value from the source module.
-        void SetZScale (double zScale)
+        NOISE_EXPORT void SetZScale (double zScale)
         {
           m_zScale = zScale;
         }

@@ -70,16 +70,16 @@ namespace noise
       public:
 
         /// Constructor.
-        Cache ();
+        NOISE_EXPORT Cache ();
 
-        virtual int GetSourceModuleCount () const
+        NOISE_EXPORT virtual int GetSourceModuleCount () const
         {
           return 1;
         }
 
-        virtual double GetValue (double x, double y, double z) const;
+        NOISE_EXPORT virtual double GetValue (double x, double y, double z) const;
 
-        virtual void SetSourceModule (int index, const Module& sourceModule)
+        NOISE_EXPORT virtual void SetSourceModule (int index, const Module& sourceModule)
         {
           Module::SetSourceModule (index, sourceModule);
           m_isCached = false;

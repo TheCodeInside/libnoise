@@ -23,6 +23,8 @@
 #ifndef NOISE_INTERP_H
 #define NOISE_INTERP_H
 
+#include "export.h"
+
 namespace noise
 {
 

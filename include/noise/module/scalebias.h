@@ -66,7 +66,7 @@ namespace noise
         /// The default bias is set to noise::module::DEFAULT_BIAS.
         ///
         /// The default scaling factor is set to noise::module::DEFAULT_SCALE.
-        ScaleBias ();
+        NOISE_EXPORT ScaleBias ();
 
         /// Returns the bias to apply to the scaled output value from the
         /// source module.
@@ -76,7 +76,7 @@ namespace noise
         /// The GetValue() method retrieves the output value from the source
         /// module, multiplies it with the scaling factor, adds the bias to
         /// it, then outputs the value.
-        double GetBias () const
+        NOISE_EXPORT double GetBias () const
         {
           return m_bias;
         }
@@ -89,17 +89,17 @@ namespace noise
         /// The GetValue() method retrieves the output value from the source
         /// module, multiplies it with the scaling factor, adds the bias to
         /// it, then outputs the value.
-        double GetScale () const
+        NOISE_EXPORT double GetScale () const
         {
           return m_scale;
         }
 
-        virtual int GetSourceModuleCount () const
+        NOISE_EXPORT virtual int GetSourceModuleCount () const
         {
           return 1;
         }
 
-        virtual double GetValue (double x, double y, double z) const;
+        NOISE_EXPORT virtual double GetValue (double x, double y, double z) const;
 
         /// Sets the bias to apply to the scaled output value from the source
         /// module.
@@ -109,7 +109,7 @@ namespace noise
         /// The GetValue() method retrieves the output value from the source
         /// module, multiplies it with the scaling factor, adds the bias to
         /// it, then outputs the value.
-        void SetBias (double bias)
+        NOISE_EXPORT void SetBias (double bias)
         {
           m_bias = bias;
         }
@@ -122,7 +122,7 @@ namespace noise
         /// The GetValue() method retrieves the output value from the source
         /// module, multiplies it with the scaling factor, adds the bias to
         /// it, then outputs the value.
-        void SetScale (double scale)
+        NOISE_EXPORT void SetScale (double scale)
         {
           m_scale = scale;
         }

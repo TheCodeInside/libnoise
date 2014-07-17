@@ -26,6 +26,11 @@ Licensing
 
 The library is under the GNU Lesser General Public License (LGPL). For more details see the [COPYING.txt](https://github.com/eXpl0it3r/libnoise/blob/master/COPYING.txt) file.
 
+Linking
+-------
+
+If you are using libnoise and are following the license (i.e. using this with a non-(L)GPL or proprietary project), then make sure to have `NOISE_SHARED_LIB` defined in your project when compiling. (*Note:* this is currently only set up to detect the GCC and MSVC C++ compilers. Edit `include/noise/export.h` for your compiler.)
+
 ------------------------------------------------------------------------
 
 Original Information from the Website

@@ -62,13 +62,13 @@ namespace noise
       public:
 
         /// Constructor.
-        Cylinder ();
+        NOISE_EXPORT Cylinder ();
 
         /// Constructor
         ///
         /// @param module The noise module that is used to generate the output
         /// values.
-        Cylinder (const module::Module& module);
+        NOISE_EXPORT Cylinder (const module::Module& module);
 
         /// Returns the noise module that is used to generate the output
         /// values.
@@ -76,7 +76,7 @@ namespace noise
         /// @returns A reference to the noise module.
         ///
         /// @pre A noise module was passed to the SetModule() method.
-        const module::Module& GetModule () const
+        NOISE_EXPORT const module::Module& GetModule () const
         {
           assert (m_pModule != NULL);
           return *m_pModule;
@@ -99,7 +99,7 @@ namespace noise
         /// This cylinder has a radius of 1.0 unit and has infinite height.
         /// It is oriented along the @a y axis.  Its center is located at the
         /// origin.
-        double GetValue (double angle, double height) const;
+        NOISE_EXPORT double GetValue (double angle, double height) const;
 
         /// Sets the noise module that is used to generate the output values.
         ///
@@ -108,7 +108,7 @@ namespace noise
         ///
         /// This noise module must exist for the lifetime of this object,
         /// until you pass a new noise module to this method.
-        void SetModule (const module::Module& module)
+        NOISE_EXPORT void SetModule (const module::Module& module)
         {
           m_pModule = &module;
         }

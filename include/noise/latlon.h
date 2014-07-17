@@ -25,6 +25,7 @@
 
 #include <math.h>
 #include "mathconsts.h"
+#include "export.h"
 
 namespace noise
 {
@@ -43,7 +44,7 @@ namespace noise
   ///
   /// @pre lat must range from @b -90 to @b +90.
   /// @pre lon must range from @b -180 to @b +180.
-  void LatLonToXYZ (double lat, double lon, double& x, double& y, double& z);
+  NOISE_EXPORT void LatLonToXYZ (double lat, double lon, double& x, double& y, double& z);
 
   /// @}
 

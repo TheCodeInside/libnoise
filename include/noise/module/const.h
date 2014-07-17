@@ -63,22 +63,22 @@ namespace noise
         ///
         /// The default constant value is set to
         /// noise::module::DEFAULT_CONST_VALUE.
-        Const ();
+        NOISE_EXPORT Const ();
 
         /// Returns the constant output value for this noise module.
         ///
         /// @returns The constant output value for this noise module.
-        double GetConstValue () const
+        NOISE_EXPORT double GetConstValue () const
         {
           return m_constValue;
         }
 
-        virtual int GetSourceModuleCount () const
+        NOISE_EXPORT virtual int GetSourceModuleCount () const
         {
           return 0;
         }
 
-        virtual double GetValue (double x, double y, double z) const
+        NOISE_EXPORT virtual double GetValue (double x, double y, double z) const
         {
           return m_constValue;
         }
@@ -86,7 +86,7 @@ namespace noise
         /// Sets the constant output value for this noise module.
         ///
         /// @param constValue The constant output value for this noise module.
-        void SetConstValue (double constValue)
+        NOISE_EXPORT void SetConstValue (double constValue)
         {
           m_constValue = constValue;
         }

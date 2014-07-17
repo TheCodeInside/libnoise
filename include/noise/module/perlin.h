@@ -178,12 +178,12 @@ namespace noise
         ///
         /// The default seed value is set to
         /// noise::module::DEFAULT_PERLIN_SEED.
-        Perlin ();
+        NOISE_EXPORT Perlin ();
 
         /// Returns the frequency of the first octave.
         ///
         /// @returns The frequency of the first octave.
-        double GetFrequency () const
+        NOISE_EXPORT double GetFrequency () const
         {
           return m_frequency;
         }
@@ -194,7 +194,7 @@ namespace noise
         /// 
         /// The lacunarity is the frequency multiplier between successive
         /// octaves.
-        double GetLacunarity () const
+        NOISE_EXPORT double GetLacunarity () const
         {
           return m_lacunarity;
         }
@@ -205,7 +205,7 @@ namespace noise
         ///
         /// See noise::NoiseQuality for definitions of the various
         /// coherent-noise qualities.
-        noise::NoiseQuality GetNoiseQuality () const
+        NOISE_EXPORT noise::NoiseQuality GetNoiseQuality () const
         {
           return m_noiseQuality;
         }
@@ -216,7 +216,7 @@ namespace noise
         ///
         /// The number of octaves controls the amount of detail in the Perlin
         /// noise.
-        int GetOctaveCount () const
+        NOISE_EXPORT int GetOctaveCount () const
         {
           return m_octaveCount;
         }
@@ -226,7 +226,7 @@ namespace noise
         /// @returns The persistence value of the Perlin noise.
         ///
         /// The persistence value controls the roughness of the Perlin noise.
-        double GetPersistence () const
+        NOISE_EXPORT double GetPersistence () const
         {
           return m_persistence;
         }
@@ -234,22 +234,22 @@ namespace noise
         /// Returns the seed value used by the Perlin-noise function.
         ///
         /// @returns The seed value.
-        int GetSeed () const
+        NOISE_EXPORT int GetSeed () const
         {
           return m_seed;
         }
 
-        virtual int GetSourceModuleCount () const
+        NOISE_EXPORT virtual int GetSourceModuleCount () const
         {
           return 0;
         }
 
-        virtual double GetValue (double x, double y, double z) const;
+        NOISE_EXPORT virtual double GetValue (double x, double y, double z) const;
 
         /// Sets the frequency of the first octave.
         ///
         /// @param frequency The frequency of the first octave.
-        void SetFrequency (double frequency)
+        NOISE_EXPORT void SetFrequency (double frequency)
         {
           m_frequency = frequency;
         }
@@ -263,7 +263,7 @@ namespace noise
         ///
         /// For best results, set the lacunarity to a number between 1.5 and
         /// 3.5.
-        void SetLacunarity (double lacunarity)
+        NOISE_EXPORT void SetLacunarity (double lacunarity)
         {
           m_lacunarity = lacunarity;
         }
@@ -274,7 +274,7 @@ namespace noise
         ///
         /// See noise::NoiseQuality for definitions of the various
         /// coherent-noise qualities.
-        void SetNoiseQuality (noise::NoiseQuality noiseQuality)
+        NOISE_EXPORT void SetNoiseQuality (noise::NoiseQuality noiseQuality)
         {
           m_noiseQuality = noiseQuality;
         }
@@ -295,7 +295,7 @@ namespace noise
         ///
         /// The larger the number of octaves, the more time required to
         /// calculate the Perlin-noise value.
-        void SetOctaveCount (int octaveCount)
+        NOISE_EXPORT void SetOctaveCount (int octaveCount)
         {
           if (octaveCount < 1 || octaveCount > PERLIN_MAX_OCTAVE) {
             throw noise::ExceptionInvalidParam ();
@@ -311,7 +311,7 @@ namespace noise
         ///
         /// For best results, set the persistence to a number between 0.0 and
         /// 1.0.
-        void SetPersistence (double persistence)
+        NOISE_EXPORT void SetPersistence (double persistence)
         {
           m_persistence = persistence;
         }
@@ -319,7 +319,7 @@ namespace noise
         /// Sets the seed value used by the Perlin-noise function.
         ///
         /// @param seed The seed value.
-        void SetSeed (int seed)
+        NOISE_EXPORT void SetSeed (int seed)
         {
           m_seed = seed;
         }
