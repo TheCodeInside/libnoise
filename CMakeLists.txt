@@ -23,7 +23,8 @@ set( INC_DIR "include" )
 
 set(
 	SOURCES
-	${INC_DIR}/noise/export.h
+    ${INC_DIR}/noise/export.h
+	${INC_DIR}/noise/noiseutils.h
 	${INC_DIR}/noise/basictypes.h
 	${INC_DIR}/noise/exception.h
 	${INC_DIR}/noise/interp.h
@@ -68,6 +69,7 @@ set(
 	${INC_DIR}/noise/module/translatepoint.h
 	${INC_DIR}/noise/module/turbulence.h
 	${INC_DIR}/noise/module/voronoi.h
+    ${SRC_DIR}/noiseutils.cpp
 	${SRC_DIR}/latlon.cpp
 	${SRC_DIR}/noisegen.cpp
 	${SRC_DIR}/model/cylinder.cpp
