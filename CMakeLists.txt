@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 2.8)
-project(libnoise 1.0.0.2)
+cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
+project(libnoise VERSION 1.0.0.2)
 
 # End-user variables
 set(CMAKE_BUILD_TYPE Release CACHE STRING "Build Type." FORCE)
