@@ -34,7 +34,7 @@ namespace noise
   /// @{
 
   /// Enumerates the noise quality.
-  NOISE_EXPORT enum NoiseQuality
+  enum NoiseQuality
   {
 
     /// Generates coherent noise quickly.  When a coherent-noise function with

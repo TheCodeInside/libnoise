@@ -1,16 +1,23 @@
-#ifndef NOISE_EXPORT_H
-#define NOISE_EXPORT_H
+#pragma once
 
-#if defined( NOISE_BUILD ) || defined( NOISE_SHARED_LIB )
-#  if defined( __GNUG__ )
-#    define NOISE_EXPORT __attribute__((__visibility__("default")))
-#  elif defined( _MSC_VER )
-#    define NOISE_EXPORT __declspec(dllexport)
-#  else
-#    error Could not detect compiler for exporting
+#if defined(NOISE_BUILD)
+#  if defined(NOISE_SHARED_LIB)
+#    if defined(__GNUG__)
+#      define NOISE_EXPORT __attribute__((__visibility__("default")))
+#    elif defined(_MSC_VER)
+#      define NOISE_EXPORT __declspec(dllexport)
+#    else
+#      error "Could not detect compiler for exporting."
+#    endif
 #  endif
 #else
-#  define NOISE_EXPORT
+#  if defined(__GNUG__)
+#    define NOISE_EXPORT __attribute__((__visibility__("default")))
+#  elif defined(_MSC_VER)
+#    define NOISE_EXPORT __declspec(dllimport)
+#  endif
 #endif
 
+#if !defined(NOISE_EXPORT)
+#  define NOISE_EXPORT
 #endif
