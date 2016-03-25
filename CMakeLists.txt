@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
 project(libnoise VERSION 1.0.0.2)
 
 # End-user variables
-set(CMAKE_BUILD_TYPE Release CACHE STRING "Build Type." FORCE)
 set(BUILD_SHARED_LIBS TRUE CACHE BOOL "Build shared libraries.")
 set(BUILD_DOC FALSE CACHE BOOL "Build Doxygen documentation.")
 set(SKIP_INSTALL FALSE CACHE BOOL "Don't install libnoise.")
